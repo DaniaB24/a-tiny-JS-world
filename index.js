@@ -7,9 +7,46 @@
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
+const cat = {
+   species: 'cat',
+   name: 'Mars',
+   hands: undefined,
+   gender: 'male',
+   legs: '4',
+   saying: 'mmeeoww',
+}
+const dog = {
+   species: 'dog',
+   name: 'Lord',
+   hands: undefined,
+   gender: 'male',
+   legs: '4',
+   saying: 'woof-wooff!',
+}
+const man = {
+   species: 'human',
+   name: 'Ron',
+   hands: 2,
+   legs: 2,
+   gender: 'male',
+   saying: 'Ahoj!',
+}
+const women = {
+   species: 'human',
+   name: 'Hermione',
+   hands: 2,
+   legs: 2,
+   gender: 'female',
+   saying: 'Hello',
+}
 
-
+const creatures = [cat, dog, man, women];
+const key = ["species", "name", "hands", "legs", "gender", "saying"]
 // ======== OUTPUT ========
+print(cat.species + ';' + cat.name + ';' + cat.hands + ';' + cat.gender + ';' + cat.legs + ';' + cat.saying);
+print(dog.species + ';' + dog.name + ';' + dog.hands + ';' + dog.gender + ';' + dog.legs + ';' + dog.saying);
+print(man.species + ';' + man.name + ';' + man.hands + ';' + man.legs + ';' + man.gender + ';' + man.legs + ';' + man.saying);
+print(women.species + ';' + women.name + ';' + women.hands + ';' + women.legs + ';' + women.gender + ';' + women.legs + ';' + women.saying);
 /* Use print(message) for output.
    Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
 
