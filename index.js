@@ -21,7 +21,7 @@ const dog = {
    hands: undefined,
    gender: 'male',
    legs: 4,
-   saying: 'mmeeow',
+   saying: 'woofff!!!',
 }
 const man = {
    species: 'human',
@@ -39,15 +39,27 @@ const women = {
    legs: 2,
    saying: 'hello!',
 }
+dog.friendly = [man.name, women.name];
+cat.friendly = [women.name];
+women.friendly = [man.name, dog.name, cat.name];
+man.friendly = [dog.name, women.name];
 
-const creatures = [cat, dog, man, women];
-const key = ['species', 'name', 'hands', 'legs', 'gender', 'saying']
+
+const creatures = [man, dog, women, cat];
+
+const propertyOfInhabitants = ['species','name', 'hands', 'gender', 'legs', 'saying', ]
+
+const output = creatures.map(inhabitant => 
+   propertyOfInhabitants.map(property => inhabitant[property]
+      ).filter(element => element !== undefined).join('; ')
+      ).join('\n');
+      
+print(output);
+
 
 // ======== OUTPUT ========
-print(cat.species + ';' + cat.name + ';' + cat.hands + ';' + cat.gender + ';' + cat.legs + ';' + cat.saying);
-print(dog.species + ';' + dog.name + ';' + dog.hands + ';' + dog.gender + ';' + dog.legs + ';' + dog.saying);
-print(man.species + ';' + man.name + ';' + man.hands + ';' + man.gender + ';' + man.legs + ';' + man.saying);
-print(women.species + ';' + women.name + ';' + women.hands + ';' + women.gender + ';' + women.legs + ';' + women.saying);
+
+
 /* Use print(message) for output.
    Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
 
