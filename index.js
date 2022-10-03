@@ -25,7 +25,7 @@ class Inhabitant {
 class Human extends Inhabitant {
   constructor(name, gender, saying, hands = 2) {
     super("human", name, gender, saying, 2);
-    this.hands = 2;
+    this.hands = hands;
   }
   say() {
     return super.say() + ("I have " + this.hands + " hands.");
