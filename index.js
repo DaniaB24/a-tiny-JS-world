@@ -24,7 +24,7 @@ class Inhabitant {
 //
 class Human extends Inhabitant {
   constructor(name, gender, saying, hands = 2) {
-    super("human", name, gender, saying, 2, hands);
+    super("human", name, gender, saying, 2);
     this.hands = 2;
   }
   say() {
@@ -47,19 +47,19 @@ class Dog extends Animal {
   }
 }
 class Man extends Human {
-  constructor(name, gender, saying) {
-    super(name, gender, saying);
+  constructor(name, saying) {
+    super(name, "male", saying);
   }
 }
 class Woman extends Human {
-  constructor(name, gender, saying) {
-    super(name, gender, saying);
+  constructor(name, saying) {
+    super(name, "female", saying);
   }
 }
 const cat = new Cat("Mars", "male", "mmeeow");
 const dog = new Dog("Sara", "female", "woofff");
-const man = new Man("Ron", "male", "ahoj");
-const woman = new Woman("Hermione", "female", "hiiii");
+const man = new Man("Ron", "ahoj");
+const woman = new Woman("Hermione", "hiiii");
 
 const creatures = [cat, dog, man, woman];
 console.log(creatures);
