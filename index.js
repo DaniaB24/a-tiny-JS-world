@@ -7,7 +7,7 @@
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
-class Creature {
+class Inhabitant {
   constructor(species, name, gender, saying, legs) {
     this.species = species;
     this.name = name;
@@ -16,57 +16,49 @@ class Creature {
     this.legs = legs;
   }
   say() {
-    return (
-      "Hi! I'm " +
-      this.species +
-      ". My name is " +
-      this.name +
-      ". My gender is " +
-      this.gender +
-      ". I've " +
-      this.legs +
-      " legs" +
-      " . I want to say " +
-      this.saying +
-      "."
-    );
+    return `
+      Hi! I'm ${this.species}. My name is ${this.name}. My gender is ${this.gender}. I've ${this.legs} legs. I want to say ${this.saying}.`;
   }
 }
 
 //
-class Human extends Creature {
-  constructor(name, gender, saying, legs = 2) {
-    super("human", name, gender, saying, legs);
+class Human extends Inhabitant {
+  constructor(name, gender, saying, hands = 2) {
+    super("human", name, gender, saying, 2, hands);
+    this.hands = 2;
+  }
+  say() {
+    return super.say() + ("I have " + this.hands + " hands.");
   }
 }
-class Animal extends Creature {
-  constructor(species, name, gender, saying, legs = 4) {
-    super(species, name, gender, saying, legs);
+class Animal extends Inhabitant {
+  constructor(species, name, gender, saying) {
+    super(species, name, gender, saying, 4);
   }
 }
 class Cat extends Animal {
-  constructor(name, gender, saying, legs) {
-    super("cat", name, gender, saying, legs);
+  constructor(name, gender, saying) {
+    super("cat", name, gender, saying);
   }
 }
 class Dog extends Animal {
-  constructor(name, gender, legs) {
-    super("dog", name, gender, legs);
+  constructor(name, gender, saying) {
+    super("dog", name, gender, saying);
   }
 }
 class Man extends Human {
-  constructor(name, gender, saying, legs) {
-    super(name, gender, saying, legs);
+  constructor(name, gender, saying) {
+    super(name, gender, saying);
   }
 }
 class Woman extends Human {
-  constructor(name, gender, saying, legs) {
-    super(name, gender, saying, legs);
+  constructor(name, gender, saying) {
+    super(name, gender, saying);
   }
 }
 const cat = new Cat("Mars", "male", "mmeeow");
-const dog = new Dog("Sara", "female", "woofff!!!");
-const man = new Man("Ron", "male", "ahoj!");
+const dog = new Dog("Sara", "female", "woofff");
+const man = new Man("Ron", "male", "ahoj");
 const woman = new Woman("Hermione", "female", "hiiii");
 
 const creatures = [cat, dog, man, woman];
