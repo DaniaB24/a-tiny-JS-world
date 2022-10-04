@@ -21,7 +21,6 @@ class Inhabitant {
   }
 }
 
-//
 class Human extends Inhabitant {
   constructor(name, gender, saying, hands = 2) {
     super("human", name, gender, saying, 2);
